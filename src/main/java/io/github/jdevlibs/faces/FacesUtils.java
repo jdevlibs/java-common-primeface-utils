@@ -20,6 +20,7 @@ package io.github.jdevlibs.faces;
 import jakarta.faces.application.Application;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.application.FacesMessage.Severity;
+import jakarta.faces.application.ProjectStage;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.component.UIViewRoot;
 import jakarta.faces.context.ExternalContext;
@@ -306,7 +307,7 @@ public final class FacesUtils {
 		}
 		return (T) value;
 	}
-	
+
 	public static void invalidateSession() {
 		getExternalContext().invalidateSession();
 	}
@@ -399,7 +400,19 @@ public final class FacesUtils {
     public static boolean isPostback() {
         return getContext().isPostback();
     }
-    
+
+	public static boolean isProcessingEvents() {
+		return getContext().isProcessingEvents();
+	}
+
+	public static boolean isStageDevelopment() {
+		return getContext().isProjectStage(ProjectStage.Development);
+	}
+
+	public static boolean isStageProduction() {
+		return getContext().isProjectStage(ProjectStage.Production);
+	}
+
 	public static boolean isBrowserFirefox() {
 		String userAgent = getUserAgent();
 		if (JSFValidators.isEmpty(userAgent)) {
@@ -464,23 +477,23 @@ public final class FacesUtils {
 		return createFacesMessage(FacesMessage.SEVERITY_ERROR, summary, detail);
 	}
 
-	public static FacesMessage createFaltalMessage(String summary) {
-		return createFaltalMessage(summary, null);
+	public static FacesMessage createFatalMessage(String summary) {
+		return createFatalMessage(summary, null);
 	}
 
-	public static FacesMessage createFaltalMessage(String summary, String detail) {
+	public static FacesMessage createFatalMessage(String summary, String detail) {
 		return createFacesMessage(FacesMessage.SEVERITY_FATAL, summary, detail);
 	}
 
-	public static void addInforMessage(String message) {
+	public static void addInfoMessage(String message) {
 		addMessage(FacesMessage.SEVERITY_INFO, message);
 	}
 
-	public static void addInforMessage(String inputId, String message) {
+	public static void addInfoMessage(String inputId, String message) {
 		addMessage(FacesMessage.SEVERITY_INFO, inputId, message);
 	}
 
-	public static void addInforMessage(String inputId, String title, String message) {
+	public static void addInfoMessage(String inputId, String title, String message) {
 		addMessage(FacesMessage.SEVERITY_INFO, inputId, title, message);
 	}
 	
@@ -703,7 +716,7 @@ public final class FacesUtils {
 		String pathInfo = req.getPathInfo(); // /a/b;c=123
 		String queryString = req.getQueryString(); // d=789
 
-		// Reconstruct original requesting URL
+		// Reconstruct the original requesting URL
 		StringBuilder url = new StringBuilder();
 		url.append(scheme).append("://").append(serverName);
 
