@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.jdevlibs</groupId>
 	<artifactId>common-primeface-utilities</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Java JSF and Primeface utilities library.</description>
@@ -22,6 +22,10 @@
 		<omnifaces.version>4.0.1</omnifaces.version>
 		<jakarta.faces-api.version>4.0.0</jakarta.faces-api.version>
 		<jakarta.servlet-api.version>5.0.0</jakarta.servlet-api.version>
+		<lombok.version>1.18.30</lombok.version>
+		<slf4j.version>2.0.9</slf4j.version>
+
+		<java-common-utilities.version>1.0.5</java-common-utilities.version>
 
 		<maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
 		<maven-source-plugin.version>3.2.0</maven-source-plugin.version>
@@ -87,6 +91,27 @@
 		    <artifactId>omnifaces</artifactId>
 		    <version>${omnifaces.version}</version>
 		    <scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.jdevlibs</groupId>
+			<artifactId>common-utilities</artifactId>
+			<version>${java-common-utilities.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
