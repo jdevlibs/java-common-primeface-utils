@@ -1,6 +1,5 @@
 package io.github.jdevlibs.faces.convertor;
 
-
 import io.github.jdevlibs.faces.FacesUtils;
 import io.github.jdevlibs.utils.DateFormats;
 import io.github.jdevlibs.utils.DateUtils;
@@ -21,10 +20,10 @@ import java.util.Date;
  * @version 1.0
  */
 @Slf4j
-@FacesConverter("customDateTimeConverter")
-public class CustomDateTimeConverter extends DateTimeConverter {
-    public CustomDateTimeConverter() {
-        setPattern(DateUtils.FM_DATE_TIME);
+@FacesConverter("customDateFullConverter")
+public class CustomDateFullConverter extends DateTimeConverter {
+    public CustomDateFullConverter() {
+        setPattern(DateUtils.FM_NAME_FULL);
         setLocale(FacesUtils.getLocale());
     }
 
@@ -49,7 +48,7 @@ public class CustomDateTimeConverter extends DateTimeConverter {
 
             return value.toString();
         } catch (ConverterException ex) {
-            log.error("customDateTimeConverter[Error]", ex);
+            log.error("CustomDateFullConverter[Error]", ex);
         }
 
         return null;

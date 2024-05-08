@@ -48,7 +48,7 @@ public class CustomDateConverter extends DateTimeConverter {
 
             return value.toString();
         } catch (ConverterException ex) {
-            log.error("getAsString[Error]", ex);
+            log.error("CustomDateConverter[Error]", ex);
         }
 
         return null;

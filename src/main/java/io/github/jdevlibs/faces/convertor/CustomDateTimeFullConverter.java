@@ -3,7 +3,6 @@ package io.github.jdevlibs.faces.convertor;
 
 import io.github.jdevlibs.faces.FacesUtils;
 import io.github.jdevlibs.utils.DateFormats;
-import io.github.jdevlibs.utils.DateUtils;
 import io.github.jdevlibs.utils.Validators;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.FacesContext;
@@ -21,10 +20,10 @@ import java.util.Date;
  * @version 1.0
  */
 @Slf4j
-@FacesConverter("customDateTimeConverter")
-public class CustomDateTimeConverter extends DateTimeConverter {
-    public CustomDateTimeConverter() {
-        setPattern(DateUtils.FM_DATE_TIME);
+@FacesConverter("customDateTimeFullConverter")
+public class CustomDateTimeFullConverter extends DateTimeConverter {
+    public CustomDateTimeFullConverter() {
+        setPattern("dd MMMM yyyy HH:mm:ss");
         setLocale(FacesUtils.getLocale());
     }
 
