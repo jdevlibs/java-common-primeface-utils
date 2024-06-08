@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.jdevlibs</groupId>
 	<artifactId>common-primeface-utilities</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<packaging>jar</packaging>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Java JSF and Primeface utilities library.</description>
@@ -18,7 +18,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<primefaces.version>12.0.0</primefaces.version>
+		<primefaces.version>14.0.0</primefaces.version>
 		<omnifaces.version>4.0.1</omnifaces.version>
 		<jakarta.faces-api.version>4.0.0</jakarta.faces-api.version>
 		<jakarta.servlet-api.version>5.0.0</jakarta.servlet-api.version>
