@@ -14,6 +14,9 @@ import java.io.Serializable;
 public class SelectItem implements Serializable {
     private String value;
     private String label;
+    private String op01;
+    private String op02;
+    private String op03;
     private String description;
     private boolean disabled;
 
